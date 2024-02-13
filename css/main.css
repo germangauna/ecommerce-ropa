@@ -4,7 +4,8 @@
 /* creamos unas variables */
 
 :root {
-    --crl-main: #4b334b;
+    --crl-main: #4b33a8;
+    --crl-main-ligth: #836bdc;
     --crl-white: #ececec;
     --crl-gray: #e2e2e2;
     --crl-red: #961818;
@@ -33,6 +34,57 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+/* wrapper index */
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: var(--crl-main);
+}
+ /* aside  */
+aside {
+    padding: 2rem;
+    color: var(--crl-white);
+    position: sticky;
+    top: 0;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+ /* footer */
+.texto-footer {
+    color: var(--crl-main-ligth);
+    font-size: .90rem;
+}
+ /* main */
+
+main {
+    background-color: var(--crl-white);
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    padding: 3rem;
+}
+
+/* titulo principal */
+
+.titulo-principal {
+    color: var(--crl-main);
+}
+
+/* contenedor-productos */
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 
