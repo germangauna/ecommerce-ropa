@@ -1,0 +1,39 @@
+/* importamos la fuentes aca en el css  desde google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* creamos unas variables */
+
+:root {
+    --crl-main: #4b334b;
+    --crl-white: #ececec;
+    --crl-gray: #e2e2e2;
+    --crl-red: #961818;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Rubik", sans-serif;
+}
+
+/* Tambien reseteamos todos los margenes y padding h1 hasta el h6, ancors, parrafos, input y el textarea.
+a veces no se los reseta con el universal que pusimos arriba  */
+
+h1, h2, h3, h4, h5, h6, p, a, input, textarea {
+    margin: 0;
+    padding: 0;
+}
+
+/* a los ul y a los ancors les saco los estilos que vienen por defecto y la decoracion */
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
