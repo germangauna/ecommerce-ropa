@@ -1,6 +1,8 @@
 
+// Productos 
 
-const ProductosArray = [
+const productos = [
+
     // abrigos
     {
         id:"Abrigo-01",
@@ -159,31 +161,24 @@ const ProductosArray = [
 
 // funcion 
 
-const contenedorProductos = document.querySelector("contenedor-productos");
+const contenedorProductos = document.querySelector("#contenedor-productos");
 
-function cargarProducto() {
-
-    Productos.forEach(producto => {
+function cargarProductos() {
+    productos.forEach(producto => {
 
         const div = document.createElement("div");
         div.classList.add("producto");
-        div.innerHTML = "
-        <img class="producto-imagen" src="./img/abrigos/img1.jpg" alt="abrigos">
-        <div class="producto-detalles">
-            <h3 class="producto-titulo">Abrigo1</h3>
-            <p class="producto-precio">$1000</p>
-            <button class="producto-agregar">Agregar</button>
-        </div>
+        div.innerHTML = `
+                        <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
+                        <div class="producto-detalles">
+                            <h3 class="producto-titulo">${producto.titulo}</h3>
+                            <p class="producto-precio">${producto.precio}0</p>
+                            <button class="producto-agregar">${producto.id} </button>
+                        </div>
+        `;
 
-        "
+        contenedorProductos.append(div);
     })
 }
 
-{/* <div class="producto">
-<img class="producto-imagen" src="./img/abrigos/img1.jpg" alt="abrigos">
-<div class="producto-detalles">
-    <h3 class="producto-titulo">Abrigo1</h3>
-    <p class="producto-precio">$1000</p>
-    <button class="producto-agregar">Agregar</button>
-</div>
-</div> */}
+cargarProductos();
