@@ -160,6 +160,7 @@ const productos = [
 ];
 
 // funcion 
+//elemetos del DOM
 // traer los productos a la pagina principal todos los productos
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
@@ -167,6 +168,13 @@ const contenedorProductos = document.querySelector("#contenedor-productos");
 //hacer que todsos los botones del aside tengan la clase active
 
 const botonesCategorias = document.querySelectorAll(".boton-categoria");
+
+
+//Hacer una contante para que cada boton del aside tenga su titulo
+const   tituloPrincipal = document.querySelector("#titulo-principal");
+
+//Variable para que funcionen los botones agregar en el carrito
+let  botonesAgregar = document.querySelectorAll(".producto-agregar");
 
 function cargarProductos(productosElegido) {
 
@@ -187,6 +195,8 @@ function cargarProductos(productosElegido) {
 
         contenedorProductos.append(div);
     })
+    actualizarBotonesAgregar();
+    console.log(botonesAgregar);
 }
 
 cargarProductos(productos);
@@ -200,8 +210,22 @@ botonesCategorias.forEach(boton =>  {
 
         botonesCategorias.forEach(boton => boton.classList.remove("active"));
         e.currentTarget.classList.add("active");
+        if (e.currentTarget.id != "todos" ){
+            
+            const productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id );
+            tituloPrincipal.innerText = productoCategoria.categoria.nombre;
 
-        const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id );
-        cargarProductos(productosBoton);
-    })
-})
+            const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id );
+             cargarProductos(productosBoton);
+            }  else {
+                    tituloPrincipal.innerText = "Todos los Productos";
+                   cargarProductos(productos);
+                
+            }
+    })  
+});
+
+function actualizarBotonesAgregar() { 
+    botonesAgregar = document.querySelectorAll(".producto-agregar"); // sin el let xq ya lo definimos arriba
+
+}
